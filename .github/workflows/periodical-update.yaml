@@ -56,7 +56,7 @@ jobs:
 
     - name: Push artifacts to release branch
       run: |
-        git config --local user.email "10215166+Hackl0us@users.noreply.github.com"
+        git config --local user.email "16770728+eeve@users.noreply.github.com"
         git config --local user.name "github-action[bot]"
 
         git fetch
@@ -67,6 +67,10 @@ jobs:
 
         cp -rf dist/CN-ip-cidr.txt ./
         cp -rf dist/Country.mmdb ./
+        
+        grep -v '^$' dist/CN-ip-cidr.txt > dist/CN-ip-cidr2.txt
+        rm -rf dist/CN-ip-cidr.txt
+        mv dist/CN-ip-cidr2.txt dist/CN-ip-cidr.txt
 
         git add Country.mmdb
         git add CN-ip-cidr.txt
