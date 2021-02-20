@@ -68,9 +68,9 @@ jobs:
         cp -rf dist/CN-ip-cidr.txt ./
         cp -rf dist/Country.mmdb ./
         
-        grep -v '^$' dist/CN-ip-cidr.txt > dist/CN-ip-cidr2.txt
-        rm -rf dist/CN-ip-cidr.txt
-        mv dist/CN-ip-cidr2.txt dist/CN-ip-cidr.txt
+        grep -v '^$' CN-ip-cidr.txt > CN-ip-cidr2.txt
+        rm -rf CN-ip-cidr.txt
+        mv CN-ip-cidr2.txt CN-ip-cidr.txt
 
         git add Country.mmdb
         git add CN-ip-cidr.txt
